@@ -1,0 +1,59 @@
+#splash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #171717 url(./images/bg.png) no-repeat center;
+    background-size: 100%100%;
+  }
+.progress-bar {
+    position: relative;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%);
+    width: 61%;
+    background: url('./images/progress-bg.png') no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    overflow: hidden;
+    height: 26px;
+    border-radius: 25px;
+}
+
+.progress-bar div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('./images/progress.png') no-repeat;
+    background-size: 100% 100%;
+    animation: smoothProgress 90s linear forwards; 
+}
+
+@keyframes smoothProgress {
+    0% {
+        left: -100%; /* Start position */
+    }
+    50% {
+        left: -30%; /* Smoothly move to 90% progress */
+    }
+    100% {
+        left: -10%; /* Stay at 90% progress */
+    }
+}
+}
+
+.stripes span {
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    animation: animate-stripes 1s linear infinite;             
+}
+
+/*
+@keyframes animate-stripes {
+    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+*/

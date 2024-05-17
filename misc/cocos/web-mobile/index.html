@@ -34,7 +34,7 @@
   <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
 
   <link rel="stylesheet" type="text/css" href="style.css"/>
-
+  <link rel="stylesheet" href="./splash.css">
 </head>
 <body>
   <div id="GameDiv" cc_exact_fit_screen="true">
@@ -42,6 +42,18 @@
         <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
       </div>
     </div>
+    <div id="splash">
+      <div class="progress-bar stripes">
+        <div class="" ></div>
+      </div>
+    </div>
+    <script>
+       (function () {
+         var splash = document.getElementById('splash');
+         splash.style.display = 'block';
+        })();
+    </script>
+    <script src="./customize/index.js"></script>
   
 <!-- Polyfills bundle. -->
 <script src="src/polyfills.bundle.js" charset="utf-8"> </script>

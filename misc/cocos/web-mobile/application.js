@@ -24,6 +24,7 @@ System.register([], function (_export, _context) {
           key: "init",
           value: function init(engine) {
             cc = engine;
+			setLoadingDisplay() //在默认代码插入我们这行代码
             cc.game.onPostBaseInitDelegate.add(this.onPostInitBase.bind(this));
             cc.game.onPostSubsystemInitDelegate.add(this.onPostSystemInit.bind(this));
           }
@@ -51,7 +52,10 @@ System.register([], function (_export, _context) {
                 }
               }
             }).then(function () {
-              return cc.game.run();
+              //return cc.game.run();
+			   //由我们控制加载场景
+               cc.game.onStart = onGameStarted.bind(null, cc);//我们自己的
+               onGameStarted(cc)//我们自己的
             });
           }
         }]);
